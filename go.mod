@@ -1,4 +1,4 @@
-module magic
+module mdmagic
 
 go 1.22.0
 
