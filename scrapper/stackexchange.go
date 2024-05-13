@@ -7,7 +7,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-func formatHtml(html string) string {
+func formatStackExchangeHtml(html string) string {
 	formattedHtml := html
 
 	// remove <p>
@@ -49,12 +49,12 @@ func StackExchange(url string) {
 		func(h *colly.HTMLElement) {
 			if countAnswers == 0 {
 				html, _ := h.DOM.Html()
-				fmt.Printf("%s\n", formatHtml(html))
+				fmt.Printf("%s\n", formatStackExchangeHtml(html))
 				countAnswers++
 			} else {
 				html, _ := h.DOM.Html()
 				fmt.Printf("# Answer %d\n", countAnswers)
-				fmt.Printf("%s\n", formatHtml(html))
+				fmt.Printf("%s\n", formatStackExchangeHtml(html))
 				countAnswers++
 			}
 		})
