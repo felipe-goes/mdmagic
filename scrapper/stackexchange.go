@@ -25,6 +25,8 @@ func formatStackExchangeHtml(html string) string {
 	// replace special characters
 	formattedHtml = strings.Replace(formattedHtml, "&#39;", "'", -1)
 	formattedHtml = strings.Replace(formattedHtml, "&#34;", "\"", -1)
+	formattedHtml = strings.Replace(formattedHtml, "&lt;", "<", -1)
+	formattedHtml = strings.Replace(formattedHtml, "&gt;", ">", -1)
 
 	return formattedHtml
 }
